@@ -1,116 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confiabilidad</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="icono.png">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .spinner-border {
-            display: none;
-            width: 1rem;
-            height: 1rem;
-            vertical-align: middle;
-            margin-left: 5px;
-}
-    </style>
+  <meta charset="UTF-8">
+  <title>Registro OT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="../index.html" target="_blank">
-            <img src="logo.png" alt="Logo" width="150">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card shadow-lg p-4 mt-0">
-                    <div class="card-body">
-                        <h2 id="titulo" class="text-center mb-4">Evidencias desarme reconstrucción</h2>
-                        <form id="form">
-                            <div class="mb-3">
-                                <label class="form-label requerido">Número de componente:</label>
-                                <input style="text-transform: uppercase;" type="text" id="componente" class="form-control">
-                            </div>
-                        
-                            <div class="mb-3">
-                                <label class="form-label requerido" for="taller">Modelo</label>
-                                <select style="text-transform: uppercase;" id="modelo" class="form-select">
-                                    <option value="" disabled selected>Selecciona el modelo</option>
-                                    <option value="MFIN 793D">MFIN 793D</option>
-                                    <option value="MFIN 789CD">MFIN 789CD</option>
-                                    <option value="MOTR 789CD">MOTR 789CD</option>
-                                    <option value="MOTR 793D">MOTR 793D</option>
-                                    <option value="SUSF 793D">SUSF 793D</option>
-                                    <option value="SUSF 789CD">SUSF 789CD</option>
-                                    <option value="TRAN 789CD">TRAN 789CD</option>
-                                    <option value="TRAN 793D">TRAN 793D</option>
-                                    <option value="CLEV HIT3600">CLEV HIT3600</option>
-                                    <option value="CCUC HIT3600">CCUC HIT3600</option>
-                                    <option value="CEMP HIT3600">CEMP HIT3600</option>
-                                    <option value="CLEV HIT5500">CLEV HIT5500</option>
-                                    <option value="CEMP HIT5500">CEMP HIT5500</option>
-                                    <option value="CICU HIT5500">CICU HIT5500</option>
-                                    <option value="CACU HIT5500">CACU HIT5500</option>
-                                    <option value="TRAN D9T">TRAN D9T</option>
-                                    <option value="TRAN D10T">TRAN D10T</option>
-                                    <option value="TRAN D11T">TRAN D11T</option>
-                                    <option value="TRAN 834">TRAN 834</option>
-                                    <option value="TRAN 631G">TRAN 631G</option>
-                                    <option value="TRAN 854GK">TRAN 854GK</option>
-                                    <option value="MFIN D9T">MFIN D9T</option>
-                                    <option value="MFIN D10T">MFIN D10T</option>
-                                    <option value="MFIN D11T">MFIN D11T</option>
-                                    <option value="MFIN 834">MFIN 834</option>
-                                    <option value="MFIN 631G">MFIN 631G</option>
-                                    <option value="MFIN 854GK">MFIN 854GK</option>
-                                    <option value="CCUC R1950">CCUC R1950</option>          
-                                </select>                                
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label requerido">OT:</label>
-                                <input style="text-transform: uppercase;"  type="text" id="ot" class="form-control">
-                            </div>
-                        
-                            <div class="mb-3">
-                                <label class="form-label requerido">Fotos:</label>
-                                <input type="file" id="fotos" class="form-control" accept=".jpg,.jpeg" multiple>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Comentarios (En este campo debe describir lo que se observa en la(s) fotografía(s), indicando los modos y mecanismos de falla asociados, así como la sección o parte específica del componente al que corresponde. Ejemplo: Piñón solar del primer embrague con pitting en la base de los dientes)</label>
-                                <textarea id="comentario" class="form-control" rows="4"></textarea>
-                            </div>
-                        
-                            <button id="btnEnviar" type="submit" class="btn btn-custom w-100">
-                                Enviar
-                                <span class="spinner-border spinner-border-sm" id="spinner"></span>
-                            </button>
-                        </form>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
+<body class="flex flex-col gap-10" style="font-family: 'Roboto', sans-serif;">
+  <header class="flex justify-between items-center py-4 px-6 bg-[#FFC528]">
+    <div class="w-40 h-18">
+      <img class="w-full h-full" src="cerrejon-logo.webp" alt="cerrejon-logo">
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="form.js"></script>
+    <div class="w-40 h-18">
+      <img class="w-full h-full" src="reco-logo.webp" alt="reco-logo" />
+    </div>
+  </header>
+
+  <main class="w-full max-w-[700px] mx-auto mb-10">
+    <div class="flex flex-col m-5 p-12 border border-black border-2 rounded">
+      <div class="flex gap-1 items-center mb-4 relative">
+        <img src="confiabilidad.png" alt="icono-confiabilidad" class="w-10">
+        <h1 class="text-sm sm:text-base font-bold">CONFIABILIDAD</h1>
+      </div>
+      <h2 class="sm:text-xl font-bold mb-1">REGISTRAR EVIDENCIAS DE ORDEN DE TRABAJO</h2>
+      <small class="text-gray-400 mb-8">Por favor ingresa los detalles</small>
+      <form class="flex flex-col gap-5" id="orderForm" method="post">
+        <input id="ot" type="text" name="orderNumber" placeholder="Orden de trabajo" required class="w-full p-3 border-2 border-[#E5E5E5] focus:outline-none text-[#23231C] text-sm rounded uppercase">
+        <select id="componente" name="component" class="w-full p-3 border-2 border-[#E5E5E5] focus:outline-none text-sm rounded uppercase" required>
+          <option value="">SELECCIONA UN COMPONENTE</option>
+          <option value="MFIN 793D">MFIN 793D</option>
+          <option value="MFIN 789CD">MFIN 789D</option>
+          <option value="MOTR 789CD">MOTR 789CD</option>
+          <option value="MOTR 793D">MOTR 793D</option>
+          <option value="SUSF 793D">SUSF 793D</option>
+          <option value="SUSF 789CD">SUSF 789CD</option>
+          <option value="TRAN 789CD">TRAN 789CD</option>
+          <option value="TRAN 793D">TRAN 793D</option>
+          <option value="TRAN 789CD">TRAN 789CD</option>
+          <option value="CLEV HIT3600">CLEV HIT3600</option>
+          <option value="CCUC HIT3600">CCUC HIT3600</option>
+          <option value="CEMP HIT3600">CEMP HIT3600</option>
+          <option value="CLEV HIT5500">CLEV HIT5500</option>
+          <option value="CEMP HIT5500">CEMP HIT5500</option>
+          <option value="CICU HIT5500">CICU HIT5500</option>
+          <option value="CACU HIT5500">CACU HIT5500</option>
+          <option value="TRAN D9T">TRAN D9T</option>
+          <option value="TRAN D10T">TRAN D10T</option>
+          <option value="TRAN D11T">TRAN D11T</option>
+          <option value="TRAN 834">TRAN 834</option>
+          <option value="TRAN 631G">TRAN 631G</option>
+          <option value="TRAN 854GK">TRAN 854GK</option>
+          <option value="MFIN D9T">MFIN D9T</option>
+          <option value="MFIN D10T">MFIN D10T</option>
+          <option value="MFIN D11T">MFIN D11T</option>
+          <option value="MFIN 834">MFIN 834</option>
+          <option value="MFIN 631G">MFIN 631G</option>
+          <option value="MFIN 854GK">MFIN 854K</option>
+          <option value="CCUC R9150">CUCC R9150</option>
+        </select>
+        <textarea name="orderComment" id="comentario-ot" rows="5" maxlength="220" placeholder="COMENTARIO GENERAL DE LA ORDEN (OPCIONAL)." class="w-full p-3 border-2 border-[#E5E5E5] focus:outline-none text-[#23231C] text-sm rounded resize-none"></textarea>
+        <div class="flex flex-col gap-1 p-3 text-gray-400 border-2 border-[#E5E5E5] rounded">
+          <label class="text- text-sm">FOTOS (MAX. 30):</label>
+          <input type="file" id="photos" name="photos" multiple accept=".jpg,.jpeg"">
+          <div id="photo-comments"></div>
+        </div>
+        <button type="submit" class="p-3 bg-[#FFC528] hover:bg-[#EDAF18] rounded">Guardar</button>
+      </form>
+
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="index.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
