@@ -19,10 +19,10 @@ photoInput.addEventListener("change", () => {
   photoCommentsDiv.innerHTML = "";
   Array.from(photoInput.files).forEach((file, i) => {
     const block = document.createElement("div");
-    block.className = "mt-10 w-full flex gap-2";
+    block.className = "mt-10 w-full flex flex-col sm:flex-row gap-2";
     block.innerHTML = `
-    <img src="${URL.createObjectURL(file)}" alt="preview" class="w-[120px] h-[106px] sm:w-[160px] sm:h-[146px] shrink-0 rounded ">
-    <textarea required class="w-full h-[106px] sm:h-full p-3 border-2 border-[#E5E5E5] rounded resize-none focus:outline-none text-[#23231C]" name="comment-${i}" maxlength="220" rows="5" placeholder="COMENTARIO DE LA FOTO."></textarea>
+    <img src="${URL.createObjectURL(file)}" alt="preview" class="w-full h-[100px] sm:w-[160px] sm:h-[146px] shrink-0 rounded">
+    <textarea required class="w-full h-[66px] text-xs sm:text-base sm:h-full p-3 border-2 border-[#E5E5E5] rounded resize-none focus:outline-none text-[#23231C]" name="comment-${i}" maxlength="220" rows="5" placeholder="COMENTARIO DE LA FOTO."></textarea>
     `;
     photoCommentsDiv.appendChild(block);
   });
