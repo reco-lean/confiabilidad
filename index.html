@@ -21,15 +21,15 @@
 
   <main class="w-full max-w-[700px] mx-auto mb-10">
     <div class="flex flex-col m-5 p-12 border border-black border-2 rounded">
-      <div class="flex gap-1 items-center mb-4 relative">
+      <div class="flex gap-1 items-center mb-2 sm:mb-4 relative">
         <img src="confiabilidad.png" alt="icono-confiabilidad" class="w-10">
-        <h1 class="text-sm sm:text-base font-bold">CONFIABILIDAD</h1>
+        <h1 class="text-xs sm:text-sm font-bold">CONFIABILIDAD</h1>
       </div>
-      <h2 class="sm:text-xl font-bold mb-1">REGISTRAR EVIDENCIAS DE ORDEN DE TRABAJO</h2>
+      <h2 class="text-sm sm:text-xl font-bold mb-1">REGISTRAR EVIDENCIAS DE ORDEN DE TRABAJO</h2>
       <small class="text-gray-400 mb-8">Por favor ingresa los detalles</small>
       <form class="flex flex-col gap-5" id="orderForm" method="post">
-        <input id="ot" type="text" name="orderNumber" placeholder="Orden de trabajo" required class="w-full p-3 border-2 border-[#E5E5E5] focus:outline-none text-[#23231C] text-sm rounded uppercase">
-        <select id="componente" name="component" class="w-full p-3 border-2 border-[#E5E5E5] focus:outline-none text-sm rounded uppercase" required>
+        <input id="ot" type="text" name="orderNumber" placeholder="Orden de trabajo" required class="w-full p-3 border-2 border-[#E5E5E5] focus:outline-none text-[#23231C] text-xs sm:text-base rounded uppercase">
+        <select id="componente" name="component" class="w-full p-3 border-2 border-[#E5E5E5] focus:outline-none text-sm rounded uppercase text-xs sm:text-base" required>
           <option value="">SELECCIONA UN COMPONENTE</option>
           <option value="MFIN 793D">MFIN 793D</option>
           <option value="MFIN 789CD">MFIN 789D</option>
@@ -61,13 +61,13 @@
           <option value="MFIN 854GK">MFIN 854K</option>
           <option value="CCUC R9150">CUCC R9150</option>
         </select>
-        <textarea name="orderComment" id="comentario-ot" rows="5" maxlength="220" placeholder="COMENTARIO GENERAL DE LA ORDEN (OPCIONAL)." class="w-full p-3 border-2 border-[#E5E5E5] focus:outline-none text-[#23231C] text-sm rounded resize-none"></textarea>
+        <textarea name="orderComment" id="comentario-ot" rows="5" maxlength="220" placeholder="COMENTARIO GENERAL DE LA ORDEN (OPCIONAL)." class="w-full p-3 border-2 border-[#E5E5E5] focus:outline-none text-[#23231C] text-xs sm:text-base rounded resize-none"></textarea>
         <div class="flex flex-col gap-1 p-3 text-gray-400 border-2 border-[#E5E5E5] rounded">
-          <label class="text- text-sm">FOTOS (MAX. 30):</label>
-          <input type="file" id="photos" name="photos" multiple accept=".jpg,.jpeg"">
+          <label class="text-xs sm:text-base">FOTOS (MAX. 30):</label>
+          <input class="text-sm sm:text-base" type="file" id="photos" name="photos" multiple accept=".jpg,.jpeg"">
           <div id="photo-comments"></div>
         </div>
-        <button type="submit" class="p-3 bg-[#FFC528] hover:bg-[#EDAF18] rounded">Guardar</button>
+        <button type="submit" class="text-xs sm:text-base p-3 bg-[#FFC528] hover:bg-[#EDAF18] rounded">Guardar</button>
       </form>
 
     </div>
@@ -76,4 +76,3 @@
   <script src="index.js"></script>
 </body>
 </html>
-
