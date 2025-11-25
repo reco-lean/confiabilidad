@@ -29,6 +29,14 @@
       <small class="text-gray-400 mb-8">Por favor ingresa los detalles</small>
       <form class="flex flex-col gap-5" id="orderForm" method="post">
         <input id="ot" type="text" name="orderNumber" placeholder="Orden de trabajo" required class="w-full p-3 border-2 border-[#E5E5E5] focus:outline-none text-[#23231C] text-xs sm:text-base rounded uppercase">
+        <select id="workshop" name="workshop" class="w-full p-3 border-2 border-[#E5E5E5] focus:outline-none text-sm rounded uppercase text-xs sm:text-base" required>
+          <option value="">SELECCIONA EL TALLER</option>
+          <option value="CILINDROS">CILINDROS</option>
+          <option value="MOTORES">MOTORES</option>
+          <option value="RODAJE">RODAJE</option>
+          <option value="SOLDADURA">SOLDADURA</option>
+          <option value="TREN DE POTENCIA">TREN DE POTENCIA</option>
+        </select>
         <select id="componente" name="component" class="w-full p-3 border-2 border-[#E5E5E5] focus:outline-none text-sm rounded uppercase text-xs sm:text-base" required>
           <option value="">SELECCIONA UN COMPONENTE</option>
           <option value="MFIN 793D">MFIN 793D</option>
