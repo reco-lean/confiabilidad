@@ -67,6 +67,7 @@ document.getElementById("orderForm").addEventListener("submit", async (e) => {
   // Armar payload final
   const payload = {
     orderNumber: e.target.orderNumber.value,
+    workshop: e.target.workshop.value,
     model: e.target.component.value,
     orderComment: e.target.orderComment.value.trim(),
     photos: photos
