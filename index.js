@@ -1,6 +1,47 @@
 const photoInput = document.getElementById("photos");
 const photoCommentsDiv = document.getElementById("photo-comments");
+const componentInput = document.getElementById("component");
+const workshop = document.getElementById("workshop");
 
+const components = {
+  
+  CILINDROS: ["CCUC HIT3600", "CEMP HIT3600", "CLEV HIT5500", "CEMP HIT5500", "CCUC HIT5500", "CACU HIT5500", "CCUC R9150", "CLEV R9150", "CEMP R9150", "CLEV 789CD", "CLEV 793D"],
+  "TREN DE POTENCIA": [
+      "TRAN D9T",
+      "TRAN D10T",
+      "TRAN D11T",
+      "TRAN 834",
+      "TRAN 631G",
+      "TRAN 854GK",
+      "MFIN D9T",
+      "MFIN D10T",
+      "MFIN D11T",
+      "MFIN 834",
+      "MFIN 631G",
+      "MFIN 854GK",
+      "MFIN 793D",
+      "MFIN 789CD",
+      "MFIN 789CD",
+      "TRAN 793D",
+      "TRAN 789CD"
+    ],
+  MOTORES: ["MOTR 789CD", "MOTR 793D"],
+  RODAJE: [],
+  SOLDADURA: []
+}
+
+workshop.addEventListener("change", (e) => {
+  componentInput.replaceChildren();
+  const items = components[e.target.value];
+  if(Array.isArray(items) && items.length > 0) {
+    for (let i = 0; i < items.length; i++) {
+      const option = document.createElement("option");
+      option.value = items[i];
+      option.text = items[i];
+      componentInput.appendChild(option);
+    } 
+  }
+})
 
 photoInput.addEventListener("change", () => {
 
@@ -74,6 +115,15 @@ document.getElementById("orderForm").addEventListener("submit", async (e) => {
   };
 
   try {
+
+    Swal.fire({
+      title: 'Enviando...',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      }
+    });
+
     const res = await fetch("https://defaultc9a8e948bf0d4f8d9e9d551ac1b45a.48.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/403406fe6985492ca0ff581ed00693f1/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=zTK-OlTY3MhKhpJyORGaODDcSJ-ctfbTFFWEUxknq9A", {
       method: "POST",
       headers: {
@@ -84,6 +134,8 @@ document.getElementById("orderForm").addEventListener("submit", async (e) => {
 
     if (!res.ok) throw new Error("Error al enviar los datos");
 
+
+    Swal.close();
     Swal.fire({
       title: "Evidencias registradas con éxito.",
       icon: "success",
@@ -92,6 +144,7 @@ document.getElementById("orderForm").addEventListener("submit", async (e) => {
     e.target.reset();
     photoCommentsDiv.innerHTML = "";
   } catch (err) {
-        alert("Error: " + err.message);
+    Swal.close();
+    alert("Error: " + err.message);
   }
 });
