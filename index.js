@@ -5,7 +5,7 @@ const workshop = document.getElementById("workshop");
 
 const components = {
   
-  CILINDROS: ["CCUC HIT3600", "CEMP HIT3600", "CLEV HIT5500", "CEMP HIT5500", "CCUC HIT5500", "CACU HIT5500", "CCUC R9150", "CLEV R9150", "CEMP R9150", "CLEV 789CD", "CLEV 793D"],
+  CILINDROS: ["CCUC HIT3600", "CEMP HIT3600", "CLEV HIT5500", "CEMP HIT5500", "CCUC HIT5500", "CACU HIT5500", "CCUC R9150", "CLEV R9150", "CEMP R9150", "CLEV 789CD", "CLEV 793D", "CLEV HIT3600"],
   "TREN DE POTENCIA": [
       "TRAN D9T",
       "TRAN D10T",
@@ -148,3 +148,4 @@ document.getElementById("orderForm").addEventListener("submit", async (e) => {
     alert("Error: " + err.message);
   }
 });
+
