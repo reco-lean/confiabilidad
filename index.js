@@ -5,7 +5,29 @@ const workshop = document.getElementById("workshop");
 
 const components = {
   
-  CILINDROS: ["CCUC HIT3600", "CEMP HIT3600", "CLEV HIT5500", "CEMP HIT5500", "CCUC HIT5500", "CACU HIT5500", "CCUC R9150", "CLEV R9150", "CEMP R9150", "CLEV 789CD", "CLEV 793D", "CLEV HIT3600"],
+  CILINDROS: ["CCUC HIT3600", "CEMP HIT3600", "CLEV HIT5500", "CEMP HIT5500", "CCUC HIT5500", 
+      "CACU HIT5500", 
+      "CCUC R9150", 
+      "CLEV R9150", 
+      "CEMP R9150", 
+      "CLEV 789CD", 
+      "CLEV 793D", 
+      "CLEV HIT3600", 
+      "SUSF 789CD", 
+      "SUST 789CD", 
+      "SUSF 793D", 
+      "SUST 793D", 
+      "SUSF 777", 
+      "SUSF 930E", 
+      "TGIR HIT3600", 
+      "TPRO HIT3600", 
+      "TGIR HIT5500", 
+      "TPRO HIT5500",
+      "ALTE L1350",
+      "CDIR L1350",
+      "CICV L1350",
+      "CLEV L1350",
+      "RMOT L1350"],
   "TREN DE POTENCIA": [
       "TRAN D9T",
       "TRAN D10T",
@@ -23,7 +45,14 @@ const components = {
       "MFIN 789CD",
       "MFIN 789CD",
       "TRAN 793D",
-      "TRAN 789CD"
+      "TRAN 789CD",
+    "TRAN 16M",
+    "CONV 789CD",
+    "CONV 793D",
+    "TRAN 777",
+    "MFIN 777",
+    "ALTE 930E",
+    "MFIN 930E"
     ],
   MOTORES: ["MOTR 789CD", "MOTR 793D"],
   RODAJE: [],
@@ -148,4 +177,5 @@ document.getElementById("orderForm").addEventListener("submit", async (e) => {
     alert("Error: " + err.message);
   }
 });
+
 
