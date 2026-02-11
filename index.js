@@ -27,7 +27,42 @@ const components = {
       "CDIR L1350",
       "CICV L1350",
       "CLEV L1350",
-      "RMOT L1350"],
+      "RMOT L1350",
+      "CLCU D9T",
+      "CICUIZ D9T",
+      "CICUD D9T",
+      "CIRP D9T",
+      "CLRP D9T",
+      "CLCU D10T",
+      "CICUD D10T",
+      "CICUI D10T",
+      "CIRPD D10T",
+      "CIRPI D10T",
+      "CLRPD D10T",
+      "CLRPI D10T",
+      "CLCU D10T2",
+      "CICUD D10T2",
+      "CICUI D10T2",
+      "CIRPD D10T2",
+      "CIRPI D10T2",
+      "CLRPD D10T2",
+      "CLRPI D10T2",
+      "CLCU D11T",
+      "CICUD D11T",
+      "CICUI D11T",
+      "CIRPD D11T",
+      "CIRPI D11T",
+      "CLRPD D11T",
+      "CLRPI D11T",
+      "CLCU 834",
+      "CICUD 834",
+      "CICUI 834",
+      "CLCUI 854G",
+      "CLCUD 854G",
+      "CLCUI 854K",
+      "CLCUD 854K",
+      "CICUD 854GK",
+      "CICUI 854GK"],
   "TREN DE POTENCIA": [
       "TRAN D9T",
       "TRAN D10T",
@@ -46,17 +81,28 @@ const components = {
       "MFIN 789CD",
       "TRAN 793D",
       "TRAN 789CD",
-    "TRAN 16M",
-    "CONV 789CD",
-    "CONV 793D",
-    "TRAN 777",
-    "MFIN 777",
-    "ALTE 930E",
-    "MFIN 930E"
+      "TRAN 16M",
+      "CONV 789CD",
+      "CONV 793D",
+      "TRAN 777",
+      "MFIN 777",
+      "ALTE 930E",
+      "MFIN 930E"
     ],
   MOTORES: ["MOTR 789CD", "MOTR 793D"],
   RODAJE: [],
-  SOLDADURA: []
+  SOLDADURA: [],
+  "COMPONENTES MENORES":[
+    "Mando de circulo 16M",
+    "Freno 16M",
+    "Freno 16M3",
+    "Rotocamara frontal 789/793",
+    "Rotocamara trasera 789/793",
+    "Ajustador de freno frontal",
+    "Ajustador de freno trasero",
+    "Freno de parqueo 834",
+    "Freno de parqueo 854"
+  ]
 }
 
 workshop.addEventListener("change", (e) => {
@@ -177,5 +223,6 @@ document.getElementById("orderForm").addEventListener("submit", async (e) => {
     alert("Error: " + err.message);
   }
 });
+
 
 
