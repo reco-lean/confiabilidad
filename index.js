@@ -62,7 +62,35 @@ const components = {
       "CLCUI 854K",
       "CLCUD 854K",
       "CICUD 854GK",
-      "CICUI 854GK"],
+      "CICUI 854GK",
+      "POLE XPC",
+      "TEMP XPC",
+      "TGIR XPC",
+      "TLEV XPC",
+      "TPRO XPC",
+      "TGIR HIT 5500",
+      "TPRO HIT 5500",
+      "TPRO HIT 3600",
+      "TGIR HIT 3600",
+      "TGIR PC4000",
+      "TPRO PC4000",
+      "TPRO PC4000",
+      "TGIR R9150",
+      "PTO R9150",
+      "TPRO R9150",
+      "PTO 984C",
+      "TGIR 984C",
+      "TPRO 984C",
+      "Reductor MMD R200",
+      "EXITATRIZ (mediana)",
+      "EXITATRIZ (Grande)",
+      "EXITATRIZ (pequena)",
+      "Reductor Trituradora MMD (grande)",
+      "Reductor FALK (Feeder)",
+      "REDUCTOR MMD R350",
+      "REDUCTOR HANSEN Banda transferencia",
+      "HANSEN QHRL4",
+      "REDUCTOR ABON"],
   "TREN DE POTENCIA": [
       "TRAN D9T",
       "TRAN D10T",
@@ -223,6 +251,7 @@ document.getElementById("orderForm").addEventListener("submit", async (e) => {
     alert("Error: " + err.message);
   }
 });
+
 
 
 
