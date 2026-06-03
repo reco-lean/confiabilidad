@@ -109,7 +109,9 @@ export const catalogComponents = {
       "TRAN 777",
       "MFIN 777",
       "ALTE 930E",
-      "MFIN 930E"
+      "MFIN 930E",
+      "CONVERTIDOR 777F",
+      "CONVERTIDOR 777G"
     ],
   MOTORES: ["MOTR 789CD", "MOTR 793D"],
   RODAJE: [],
