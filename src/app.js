@@ -95,15 +95,17 @@ class RegistroOtApp extends LitElement {
       } else if (this._modoActual === 'generic') {
         payload.comentarioGeneral = this.querySelector('#genComment').value;
         const subComponenteGenerico = this.querySelector('form-generico');
-        const archivos = subComponenteGenerico.archivosCargados;
+        const archivos = subComponenteGenerico.archivosCargados; // Ahora es un arreglo de { file, preview }
         
         if (archivos.length === 0) throw new Error("Debe subir al menos una foto.");
 
         const commentInputs = this.querySelectorAll('.photo-comment');
-        payload.evidenciasGenericas = await Promise.all(archivos.map(async (file, idx) => ({
-          nombreArchivo: file.name.replace(/\.[^/.]+$/, "") + ".jpg",
+        
+        // Cambiamos "file" por "item" para mayor claridad, y accedemos a "item.file"
+        payload.evidenciasGenericas = await Promise.all(archivos.map(async (item, idx) => ({
+          nombreArchivo: item.file.name.replace(/\.[^/.]+$/, "") + ".jpg",
           comentario: commentInputs[idx].value,
-          base64: await compressAndEncodeImage(file)
+          base64: await compressAndEncodeImage(item.file)
         })));
       }
 
